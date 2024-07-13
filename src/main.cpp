@@ -1,22 +1,16 @@
+#include <iostream>
 #include "image.h"
+#include "algorithms/canny.h"
 
 int main(){
-    Image green = Image("images/GRN.bmp");
-    green.writeImageToFile("GRN.bmp");
+    Image f1 = Image("images/sample3.bmp");
+    std::vector<double> kernel = CUDAVISION::getGaussianKernel(5, 10);
+    Image horizontal = CUDAVISION::horizontalConvolution(f1, kernel);
+    Image vertical = CUDAVISION::verticalConvolution(f1, kernel);
+    horizontal.writeImageToFile("horizontal.bmp");
+    vertical.writeImageToFile("vertical.bmp");
+    Image blur = CUDAVISION::gaussianSmooth(f1, 5, 10.0);
+    blur.writeImageToFile("blur.bmp");
 
-    Image yellow = Image(500, 500, 255, 255, 0);
-    yellow.writeImageToFile("YEL.bmp");
-
-    Image cyan = Image(500, 500, 0, 255, 255);
-    cyan.writeImageToFile("CYA.bmp");
-
-    Image cyan2 = Image(cyan);
-    cyan2.writeImageToFile("CYA2.bmp");
-
-    Image empty = Image(500, 500);
-    empty.writeImageToFile("EMPTY.bmp");
-
-    Image purple = Image(500, 500, 255, 0, 255);
-    purple.writeImageToFile("PRP.bmp");
     return 0;
 }

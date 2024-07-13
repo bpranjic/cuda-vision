@@ -4,6 +4,9 @@
 
 #pragma pack(1) // remove padding
 
+/**
+ * Struct for Bitmap File Header
+ */
 typedef struct
 {
     uint8_t headerFieldA; // has to be 'B'
@@ -14,6 +17,9 @@ typedef struct
     uint32_t imageOffset; // starting location of pixel array
 } BitmapFileHeader;
 
+/**
+ * Struct for V3 Bitmap Info Header
+ */
 typedef struct
 {
     uint32_t headerSize;          // size of this struct
