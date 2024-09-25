@@ -64,12 +64,12 @@ Image::~Image() {}
 /**
  * This method returns the height of an image.
  */
-u_int32_t Image::getHeight() const { return height; }
+uint32_t Image::getHeight() const { return height; }
 
 /**
  * This method returns the width of an image.
  */
-u_int32_t Image::getWidth() const { return width; }
+uint32_t Image::getWidth() const { return width; }
 
 /**
  * This method returns the pixels of an image.

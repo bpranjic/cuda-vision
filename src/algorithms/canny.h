@@ -1,5 +1,4 @@
 #include "../image.h"
-
 namespace CUDAVISION
 {
     /**
