@@ -1,6 +1,6 @@
 set(SOURCES
-    image.cpp
-    algorithms/canny.cpp
+    util/image.cc
+    edge_detection/canny.cc
 )
 
 add_library(${PROJECT_NAME} ${SOURCES})
